@@ -1,0 +1,158 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+            <div><i class="material-icons">home</i></div>
+            <div class="menu-text-align">Home</div>
+        </div>
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('about')">
+            <div><i class="material-icons">payment</i></div>
+            <div class="menu-text-align">About</div>
+        </div>
+        <div fxLayout="row" fxFlex="11" class="menu-item-wrapper active-selected-menu" (click)="routeGoTo('registration')">
+            <div><i class="material-icons">notes</i></div>
+            <div class="menu-text-align">Registration</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('material')">
+            <div><i class="material-icons">menu_book</i></div>
+            <div class="menu-text-align">Learning Material</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('test')">
+            <div><i class="material-icons">school</i></div>
+            <div class="menu-text-align">Take a Test</div>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+            <div fxLayout="row" class="username-display">{{userinfo.name ? userinfo.name : ''}}</div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                <div><i class="material-icons">logout</i></div>
+                <div class="menu-text-align-logout">Logout</div>
+            </div>
+        </div>    
+    </div>
+    <div class="content">
+        <div class="content-header">Profile Information</div>
+        <form #authForm="ngForm" (ngSubmit)="onSaveNote(authForm)">
+            <div fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column" fxLayout.sm="column">
+                <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput [(ngModel)]="loginData.name" id="name" name="name" placeholder="Name" autocomplete="off" required>
+                    </mat-form-field>
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Middle Name</mat-label>
+                        <input matInput [(ngModel)]="loginData.econtact" id="econtact" name="econtact" placeholder="" autocomplete="off">
+                    </mat-form-field>
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput [(ngModel)]="loginData.eid" id="eid" name="eid" placeholder="" autocomplete="off" required>
+                    </mat-form-field>
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>E-Mail Id</mat-label>
+                        <input matInput [(ngModel)]="loginData.email" id="email" type="email" name="email" placeholder="" autocomplete="off" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                    <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Gender</mat-label>
+                        <mat-select [(ngModel)]="loginData.gender" id="gender" name="gender" required>
+                            <mat-option value="Male">Male</mat-option>
+                            <mat-option value="Female">Female</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>DOB</mat-label>
+                        <input matInput type="date" [(ngModel)]="loginData.dob" id="dob" name="dob" placeholder="DD/MM/YY" autocomplete="off" required>
+                    </mat-form-field>
+                    <!-- <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Designation in earlier Election</mat-label>
+                        <input matInput [(ngModel)]="loginData.edesignation" id="edesignation" name="edesignation" placeholder="" autocomplete="off" required>
+                    </mat-form-field> -->
+                    <!-- <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Experience in Election Duty</mat-label>
+                        <mat-select [(ngModel)]="loginData.eduty" id="eduty" name="eduty" required>
+                            <mat-option value="Yes">Yes</mat-option>
+                            <mat-option value="Yes">No</mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+                    <!-- <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Age</mat-label>
+                        <input matInput [(ngModel)]="loginData.age" type="number" maxlength="10" id="age" name="age" placeholder="" autocomplete="off" required>
+                    </mat-form-field> -->
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Contact Number</mat-label>
+                        <input matInput [(ngModel)]="loginData.contact" type="tel" maxlength="10" id="contact" name="contact" placeholder="" autocomplete="off" required pattern="^((\\+91-?)|0)?[0-9]{10}$">
+                    </mat-form-field>
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Alternate Contact Number</mat-label>
+                        <input matInput [(ngModel)]="loginData.acontact" type="number" maxlength="10" id="acontact" name="acontact" placeholder="" autocomplete="off" pattern="^((\\+91-?)|0)?[0-9]{10}$">
+                    </mat-form-field>
+                </div>
+                <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                    <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <input matInput [(ngModel)]="loginData.address" id="address" name="address" placeholder="" autocomplete="off">
+                    </mat-form-field>
+                    <!-- <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>No. of Elections worked</mat-label>
+                        <mat-select [(ngModel)]="loginData.eworked" id="eworked" name="eworked" required>
+                            <mat-option *ngFor="let item of electionWorked" [value]="item.name">{{item.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+                    <!-- <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Training Type</mat-label>
+                        <mat-select [(ngModel)]="loginData.trainingtype" id="trainingtype" name="trainingtype" required="true">
+                            <mat-option value="LMS">LMS</mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Designation</mat-label>
+                        <input matInput [(ngModel)]="loginData.designation" id="designation" name="designation" placeholder="" autocomplete="off" required>
+                    </mat-form-field>
+                    <!-- <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Designation in Current Election Duty</mat-label>
+                        <input matInput [(ngModel)]="loginData.cedesignation" id="cedesignation" name="cedesignation" placeholder="" autocomplete="off" required>
+                    </mat-form-field> -->
+                    <!-- <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Current working location</mat-label>
+                        <input matInput [(ngModel)]="loginData.location" id="location" name="location" placeholder="" autocomplete="off" required>
+                    </mat-form-field> -->
+                    <!-- <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Expertise in Election Duty</mat-label>
+                        <mat-select [(ngModel)]="loginData.expertise" id="expertise" name="expertise" required>
+                            <mat-option *ngFor="let item of expertiseList" [value]="item.name">{{item.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field> -->
+                    <mat-form-field class="request-field" appearance="outline">
+                        <mat-label>Department</mat-label>
+                        <input matInput [(ngModel)]="loginData.department" id="department" name="department" placeholder="" autocomplete="off" required>
+                    </mat-form-field>
+                    <mat-form-field class="request-field-two" appearance="outline">
+                        <mat-label>Working District</mat-label>
+                        <mat-select [(ngModel)]="loginData.wdistrict" id="wdistrict" name="wdistrict" required>
+                            <mat-option *ngFor="let item of district" [value]="item.display">{{item.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- <div class="forgot-password" (click)="forgotPassword()">Forgot Password</div> -->
+            <div style="margin-top: 30px;">
+                <button mat-raised-button color="primary" [disabled]="makeDisabled" type="submit">{{(userinfo.profile_check === 0) ? 'Save' : 'Update'}} Profile</button>
+            </div>
+        </form>
+    </div>
+  </div>

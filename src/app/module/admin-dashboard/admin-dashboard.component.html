@@ -1,0 +1,197 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row">
+            <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+                <div><i class="material-icons">home</i></div>
+                <div class="menu-text-align">Home</div>
+            </div>
+            <div *ngIf="userinfo.username === 'superadminister'" fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('user')">
+                <div><i class="material-icons">group</i></div>
+                <div class="menu-text-align">Add User</div>
+            </div>
+            <div *ngIf="userinfo.username === 'superadminister'" fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('question')">
+                <div><i class="material-icons">menu_book</i></div>
+                <div class="menu-text-align">Add Question</div>
+            </div>
+            <div *ngIf="userinfo.username === 'superadminister'" fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('updatepassword')">
+                <div><i class="material-icons">key</i></div>
+                <div class="menu-text-align">Update Password</div>
+            </div>
+            <div *ngIf="userinfo.job_role === 'ADMINEO'" fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('dashboard')">
+                <div><i class="material-icons">grid_4x4</i></div>
+                <div class="menu-text-align">Dashboard</div>
+            </div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('report')">
+                <div><i class="material-icons">auto_graph</i></div>
+                <div class="menu-text-align">Reports</div>
+            </div>
+            <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+                <div fxLayout="row" class="username-display" style="text-transform: uppercase;">{{(userinfo.job_role === 'ADMINEO') ? displayName : userinfo.username}}</div>
+                <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                    <div><i class="material-icons">logout</i></div>
+                    <div class="menu-text-align-logout">Logout</div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="content">
+        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="userinfo.job_role === 'ADMIN'">
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-form-field class="request-field" appearance="outline">
+                    <mat-label>Select District</mat-label>
+                    <mat-select [(ngModel)]="district" id="district" name="district" (selectionChange)="getDashboardData(district)" required>
+                        <mat-option *ngFor="let item of districtList" [value]="item.display">{{item.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row" *ngIf="district === 'All' && userinfo.job_role === 'ADMIN'" class="chart-no-show">
+            <div fxFlex="100">
+                <canvas baseChart 
+                    height="100"
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [plugins]="barChartPlugins"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+                </canvas>
+            </div>
+            <!-- <div fxFlex="50">
+                <canvas baseChart
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  [plugins]="lineChartPlugins">
+                </canvas>
+            </div> -->
+        </div>
+        <div fxLayout="row" *ngIf="district !== 'All'" class="chart-no-show">
+            <div fxFlex="33"></div>
+            <div fxFlex="33">
+                <canvas baseChart 
+                    [data]="pieChartData" 
+                    [labels]="pieChartLabels" 
+                    [chartType]="pieChartType"
+                    [options]="pieChartOptions"
+                    [plugins]="pieChartPlugins"
+                    [legend]="pieChartLegend">
+                </canvas>
+            </div>
+            <div fxFlex="33"></div>
+        </div>
+        <div fxLayout="row wrap">
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: indigo;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 20px; font-family: Digital-7;">
+                        <div fxFlex fxLayout="row">
+                            <div class="text-no-show"><span class="material-icons" style="font-size: 2rem;">stars</span></div>
+                            <div style="margin: -10px 0 0 7px; font-weight: 500;" class="label-mob">Total Registered <br>Users</div>
+                        </div>
+                        <div fxFlex="30" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalUser}}</div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: cornflowerblue;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 25px; font-family: Digital-7;">
+                        <div fxFlex class="label-mob"><span class="material-icons text-no-show" style="font-size: 2rem;">male</span> Total Male</div>
+                        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalMale}}</div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: goldenrod;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 25px; font-family: Digital-7;">
+                        <div fxFlex class="label-mob"><span class="material-icons text-no-show" style="font-size: 2rem;">female</span> Total Female</div>
+                        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalFemale}}</div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <div fxLayout="row wrap">
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: darkslategray;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 20px; font-family: Digital-7;">
+                        <div fxFlex class="label-mob"><span class="material-icons text-no-show" style="font-size: 2rem;">wc</span> Total Assessed</div>
+                        <div fxFlex="30" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalAssess}}</div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: chocolate;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 20px; font-family: Digital-7;">
+                        <div fxFlex fxLayout="row">
+                            <div><span class="material-icons text-no-show" style="font-size: 2rem;">stars</span></div>
+                            <div style="margin: -10px 0 0 7px; font-weight: 500;" class="label-mob">Total Assessed <br>Satisfactorily</div>
+                        </div>
+                        <div fxFlex="30" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalPass}}</div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: turquoise;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 20px; font-family: Digital-7;">
+                        <div fxFlex fxLayout="row">
+                            <div><span class="material-icons text-no-show" style="font-size: 2rem;">rowing</span></div>
+                            <div style="margin: -10px 0 0 7px; font-weight: 500;" class="label-mob">Total Needing <br>Improvement</div>
+                        </div>
+                        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalFail}}</div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+        <div fxLayout="row wrap">
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: forestgreen;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 20px; font-family: Digital-7;">
+                        <div fxFlex fxLayout="row">
+                            <div><span class="material-icons text-no-show" style="font-size: 2rem;">forum</span></div>
+                            <div style="margin: -10px 0 0 7px; font-weight: 500;" class="label-mob">Total Registered <br>Not Taken Test</div>
+                        </div>
+                        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalNotTakenExam}}</div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: darkgoldenrod;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 25px; font-family: Digital-7;">
+                        <div fxFlex class="label-mob"><span class="material-icons text-no-show" style="font-size: 2rem;">business</span> Districts</div>
+                        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalDistrict}}</div>
+                    </div>
+                </mat-card>
+            </div>
+            <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3">
+                <mat-card style="color: #fff; width: 90%; height: 80%; background-color: indigo;">
+                    <div (click)="routeGoTo('registration')" class="card-big" fxLayout="row" style="font-size: 25px; font-family: Digital-7;">
+                        <div fxFlex class="label-mob"><span class="material-icons text-no-show" style="font-size: 2rem;">integration_instructions</span> Job Role</div>
+                        <div fxFlex="20" fxLayout="row" fxLayoutAlign="end center" class="mob-text-number">{{dashboardData.totalRole}}</div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">© Copyright 2022 All Rights Reserved</div>
+        <div class="credits">Office of the Chief Electoral Officer, Tripura All rights reserved. Content Managed by Office of the Chief Electoral Officer, Tripura</div>
+    </div>
+  </div>

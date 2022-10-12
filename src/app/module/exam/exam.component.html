@@ -1,0 +1,91 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+            <div><i class="material-icons">home</i></div>
+            <div class="menu-text-align">Home</div>
+        </div>
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('about')">
+            <div><i class="material-icons">payment</i></div>
+            <div class="menu-text-align">About</div>
+        </div>
+        <div fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('registration')">
+            <div><i class="material-icons">notes</i></div>
+            <div class="menu-text-align">Registration</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('material')">
+            <div><i class="material-icons">menu_book</i></div>
+            <div class="menu-text-align">Learning Material</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper active-selected-menu" (click)="routeGoTo('test')">
+            <div><i class="material-icons">school</i></div>
+            <div class="menu-text-align">Take a Test</div>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+            <div fxLayout="row" class="username-display">{{userinfo.name ? userinfo.name : ''}}</div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                <div><i class="material-icons">logout</i></div>
+                <div class="menu-text-align-logout">Logout</div>
+            </div>
+        </div>    
+    </div>
+    <div class="content info-message">
+        All questions are multiple choice options and mandatory. Please select the correct one. You have 1 hour to complete the test. All the Best ! 
+    </div>
+    <div class="content">
+        <div fxLayout="row" style="margin-top: 20px; padding: 0 20px 0 20px;" *ngFor="let item of questionList; index as i">
+            <div style="margin-bottom: 20px;">
+                <div> {{i+1}}. {{item.question}}</div>
+                <mat-radio-group matInput [(ngModel)]="item.answer" aria-label="Select an option" name="{{'question_' + i}}">
+                    <div class="option-list first" *ngIf="item.option1">
+                        <mat-radio-button value="{{item.option1}}">
+                            <span class="wrap-mat-radio-label">
+                                {{item.option1}}
+                            </span>
+                        </mat-radio-button>
+                    </div>
+                    <div class="option-list" *ngIf="item.option2">
+                        <mat-radio-button value="{{item.option2}}">
+                            <span class="wrap-mat-radio-label">
+                                {{item.option2}}
+                            </span>
+                        </mat-radio-button>
+                    </div>
+                    <div class="option-list" *ngIf="item.option3">
+                        <mat-radio-button value="{{item.option3}}">
+                            <span class="wrap-mat-radio-label">
+                                {{item.option3}}
+                            </span>
+                        </mat-radio-button>
+                    </div>
+                    <div class="option-list" *ngIf="item.option4">
+                        <mat-radio-button value="{{item.option4}}">
+                            <span class="wrap-mat-radio-label">
+                                {{item.option4}}
+                            </span>
+                        </mat-radio-button>
+                    </div>
+                  </mat-radio-group>
+            </div>
+        </div>
+        <!-- <mat-spinner *ngIf="progressBar"></mat-spinner> -->
+        <div style="text-align: center; padding-bottom: 40px;">
+            <button mat-raised-button style="background-color: #3289c3; color: white;" (click)="submitTest()">Submit Test</button>
+        </div>
+    </div>
+</div>

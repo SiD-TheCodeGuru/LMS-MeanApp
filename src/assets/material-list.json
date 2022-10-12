@@ -1,0 +1,632 @@
+[{
+		"id": 1,
+		"name": "Counting",
+		"contentList": [
+			{
+				"name": "Election Counting Application",
+				"url": "Election_Counting_Application.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Booth Counting PPT",
+				"url": "Booth_Counting_PPT.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Counting of Printed Paper Slips of VVPATs in case of nonretrieval",
+				"url": "Counting_of_Printed_Paper_Slips_of_VVPATs_in_case_of_nonretrieval.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Carrying of Mobile Phone in Counting Hall",
+				"url": "Carrying_of_Mobile_Phone_in_Counting_Hall.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Counting of VVPAT paper slips in case of CU failure",
+				"url": "Counting_of_VVPAT_paper_slips_in_case_of_CU_failure.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Election Counting Application",
+				"url": "Election_Counting_Application.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Handbook for Counting Agents",
+				"url": "Handbook_for_Counting_Agents.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Legal - Counting",
+				"url": "Legal_counting.ppt",
+				"type": "ppt"
+			},
+			{
+				"name": "Security measures for polled Electronic Voting Machines and VVPATs stored in Strong Rooms for counting of votes",
+				"url": "Security_measures_for_polled_Electronic_Voting_Machines_and_VVPATs_stored_in_Strong_Rooms_for_counting_of_votes.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Security Strong Rooms for counting",
+				"url": "Security_Strong_Rooms_for_counting.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Election Counting Application",
+				"url": "Election Counting Application.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Carrying of Mobile Phone in Counting Hall",
+				"url": "Carrying_of_Mobile_Phone_in_Counting_Hall.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Counting of Printed Paper Slips of VVPATs in case of nonretrieval",
+				"url": "Counting_of_Printed_Paper_Slips_of_VVPATs_in_case_of_nonretrieval.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Counting of Votes",
+				"url": "Counting_of_Votes.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Counting of Votes",
+				"url": "Counting_of_Votes.ppt",
+				"type": "ppt"
+			},
+			{
+				"name": "Counting of VVPAT paper slips in case of CU failure",
+				"url": "Counting_of_VVPAT_paper_slips_in_case_of_CU_failure.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Handbook for Counting Agents",
+				"url": "Handbook_for_Counting_Agents.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Security Strong Rooms for counting",
+				"url": "Security_Strong_Rooms_for_counting.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "EEM",
+		"contentList": [{
+				"name": "Compendium of Instructions on Election Expenditure Monitoring Part 1",
+				"url": "Compendium_of_Instructions_on_Election_Expenditure_Monitoring_Part_1.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Compendium of Instructions on Election Expenditure Monitoring Part 2",
+				"url": "Compendium_of_Instructions_on_Election_Expenditure_Monitoring_Part_2.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Expenditure Monitoring Application",
+				"url": "Expenditure_Monitoring_Application.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Expenditure Monitoring",
+				"url": "Expenditure_Monitoring_Part_1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Important Instructions for Expenditure Observers",
+				"url": "Important_Instructions_for_Expenditure_Observers.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Electoral Rolls",
+		"contentList": [{
+				"name": "Legal Provisions & Structures",
+				"url": "Legal_Provisions_&_Structures.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Procedural Matters of Roll Revision",
+				"url": "Procedural_Matters_of_Roll_Revision.pptx",
+				"type": "pptx"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "ETPBS",
+		"contentList": [{
+				"name": "ETPBS Part I",
+				"url": "ETPBS_Part_I.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "ETPBS Part II",
+				"url": "ETPBS_Part_II.pptx",
+				"type": "pptx"
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "EVM",
+		"contentList": [{
+				"name": "1st Randomisation",
+				"url": "1st_Randomisation.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "EVM & VVPAT final",
+				"url": "EVM_&_VVPAT_final.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "EVM BIHAR",
+				"url": "EVM_BIHAR.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "EVM BYE ELECTIONS",
+				"url": "EVM_BYE_ELECTIONS.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "EVM Challenge By Election Commission of India",
+				"url": "EVM_Challenge_By_Election_Commission_of_India.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "EVM Do's & Don'ts",
+				"url": "EVM_Do's_&_Don'ts.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "EVM TRAINING FILM",
+				"url": "EVM_TRAINING_FILM.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Instructions of Use of Electronic Voting Machines (EVM) with Voter Verifiable Paper Audit trail (VVPAT) system",
+				"url": "Instructions_of_Use_of_Electronic_Voting_Machines_(EVM)_with_Voter_Verifiable_Paper_Audit_trail_(VVPAT)_system.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Other Material Dispatch of polling parties & Collection of polling Material",
+				"url": "Other_Material_Dispatch_of_polling_parties_&_Collection_of_polling_Material.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Presentation On EVM VVPAT",
+				"url": "Presentation_On_EVM_VVPAT.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Rev Admin EVM VVPAT-July-2020-1",
+				"url": "Rev_Admin_EVM_VVPAT-July-2020-1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "The Electoral Roll Dispatch of polling parties & Collection of polling Material",
+				"url": "The_Electoral_Roll_Dispatch_of_polling_parties_&_Collection_of_polling_Material_(1).mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "The EVM Dispatch of polling parties & Collection of polling Material",
+				"url": "The_EVM_Dispatch_of_polling_parties_&_Collection_of_polling_Material (1).mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "EVM Video",
+				"url": "EVM_Video.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "VVPAT HINDI",
+				"url": "VVPAT_HINDI.mp4",
+				"type": "mp4"
+			}
+		]
+	},
+	{
+		"id": 6,
+		"name": "ICT Applications",
+		"contentList": [{
+				"name": "COMDIS",
+				"url": "COMDIS.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Election Monitoring",
+				"url": "Election_Monitoring.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Encore Nodal App",
+				"url": "Encore_Nodal_App.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "ENCORE",
+				"url": "ENCORE-PPT.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "ICT I KBM.Ver.0.1",
+				"url": "ICT-I-KBM.Ver.0.1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "ICT II KBM.Ver.0.1",
+				"url": "ICT-II-KBM.Ver.0.1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "ERO Legal Provisions & Structures",
+				"url": "ERO_Legal_Provisions_&_Structures.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "MCMC Application",
+				"url": "MCMC_application.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Media Monitoring",
+				"url": "Media_Monitoring.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "SuvidhaEncore",
+				"url": "SuvidhaEncore.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 7,
+		"name": "Legal Provisions",
+		"contentList": [{
+				"name": "Acts of Parliament",
+				"url": "Acts_of_Parliament.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "ERO Legal Provisions & Structures",
+				"url": "ERO_Legal_Provisions_&_Structures.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Legal Counting",
+				"url": "Legal_Counting.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Legal Researcher",
+				"url": "Legal_Researcher.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Part 15",
+				"url": "Part15.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Representation of the people act 1950",
+				"url": "Representation_of_the_people_act_1950.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Representation of the people act 1951",
+				"url": "Representation_of_the_people_act_1951.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 8,
+		"name": "Manuals",
+		"contentList": [{
+				"name": "Hand book for Returning Officer Document 23 - Edition -1",
+				"url": "Hand_book_for_Returning_Officer_Document_23_-_Edition_-1.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Handbook for Counting Agents",
+				"url": "Handbook_for_Counting_Agents.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Handbook for Presiding Officers",
+				"url": "Handbook_for_Presiding_Officers.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Job Description MO",
+				"url": "JobDescriptionMO.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 9,
+		"name": "MCC",
+		"contentList": [{
+				"name": "Bye election MCC enforcement",
+				"url": "Bye_election_MCC_enforcement.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Compendium MCC",
+				"url": "Compendium_MCC.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "MCC",
+				"url": "MCC.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "MCC 27092018",
+				"url": "MCC_27092018.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "MCC Relaxation & Violation Portal",
+				"url": "MCC_Relaxation_&_Violation_Portal.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "MCC Series 1",
+				"url": "MCC_Series1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "MCC Series 2",
+				"url": "MCC_Series2.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "MCC Series 3",
+				"url": "MCC_Series3.pptx",
+				"type": "pptx"
+			}
+		]
+	},
+	{
+		"id": 10,
+		"name": "Mock Poll",
+		"contentList": [{
+				"name": "Voting dual camera final MPEG 4",
+				"url": "Voting_dual_camera_final_MPEG_4.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Voting front camera MPEG 4",
+				"url": "Voting_front_camera_MPEG_4.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Voting wide camera MPEG 4",
+				"url": "Voting_wide_camera_MPEG_4.mp4",
+				"type": "mp4"
+			}
+		]
+	},
+	{
+		"id": 11,
+		"name": "Nomination Related Training ppt",
+		"contentList": [{
+				"name": "Nomination q n dq withdrawl symbol f",
+				"url": "Nomination_q_n_dq_withdrawl_symbol_f.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Oath for Lok Sabha",
+				"url": "Oath_for_Lok_Sabha.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Prevention of Disqualification amendment Act 2006",
+				"url": "Prevention_of_Disqualification_amendment_Act_2006.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Prevention of Disqualification amendment act 2013",
+				"url": "Prevention_of_Disqualification_amendment_act_2013.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Removal of Disqualification Act 1959",
+				"url": "Removal_of_Disqualification_Act_1959.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Rrepresentation of the people act 1951",
+				"url": "Rrepresentation_of_the_people_act_1951.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Scrutiny withdrawl symbol",
+				"url": "Scrutiny_withdrawl_symbol.pptx",
+				"type": "pptx"
+			}
+		]
+	},
+	{
+		"id": 12,
+		"name": "Police Training",
+		"contentList": [{
+				"name": "Checklist for Police Officers 2014",
+				"url": "Checklist_for_Police_Officers_2014.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Police Training for Elections",
+				"url": "Police_Training_for_Elections.pptx",
+				"type": "pptx"
+			}
+		]
+	},
+	{
+		"id": 13,
+		"name": "Poll Process and Conduct of Election",
+		"contentList": [{
+				"name": "Closing And Sealing of Control Unit",
+				"url": "Closing_And_Sealing_of_Control_Unit.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Commencement of Poll",
+				"url": "Commencement_of_Poll.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Conducting Mock Poll",
+				"url": "Conducting_Mock_Poll.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "EVM Do's & Don'ts",
+				"url": "EVM_Do's_&_Don'ts.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Just Before the Poll",
+				"url": "Just_Before_the_Poll.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "POLL PROCESS TRAINING FILM",
+				"url": "POLL_PROCESS_TRAINING_FILM.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Pre Poll Preparations on Appointment",
+				"url": "Pre_Poll_Preparations_on_Appointment.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "Tendered Votes",
+				"url": "Tendered_Votes.mp4",
+				"type": "mp4"
+			}
+		]
+	},
+	{
+		"id": 14,
+		"name": "Polling Station",
+		"contentList": [{
+				"name": "Polling Station Operations Management",
+				"url": "Polling_Station_Operations_Management.mp4",
+				"type": "mp4"
+			},
+			{
+				"name": "UM Manage Polling station",
+				"url": "UM_Manage_Polling_station.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 15,
+		"name": "Postal Ballot",
+		"contentList": [{
+				"name": "Guidelines for issue of Postal Ballot Papers",
+				"url": "Guidelines_for_issue_of_Postal_Ballot_Papers.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Postal Ballot Part 1",
+				"url": "Postal_Ballot_Part_1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Postal Ballot Part 2",
+				"url": "Postal_Ballot_Part_2.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Postal Ballots With Film",
+				"url": "Postal_Ballots_With_Film.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Postal BP",
+				"url": "Postal_BP.pptx",
+				"type": "pptx"
+			}
+		]
+	},
+	{
+		"id": 16,
+		"name": "Statutory Forms",
+		"contentList": [{
+				"name": "Statutory Forms",
+				"url": "Statutory_Forms.docx",
+				"type": "docx"
+			},
+			{
+				"name": "Statutory Forms GPs with NOTA 29.12.2017 231",
+				"url": "Statutory_Forms_GPs_with_NOTA_29.12.2017_231.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Statutory Non Statutory Forms regarding",
+				"url": "Statutory_Non_Statutory_Forms_regarding.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 17,
+		"name": "SVEEP",
+		"contentList": [{
+				"name": "ECI SVEEP 2014",
+				"url": "ECI_SVEEP_2014.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "SVEEP",
+				"url": "SVEEP.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "SVEEP Strategy for the EVP Reg.",
+				"url": "SVEEP_Strategy_for_the_EVP_Reg.pdf",
+				"type": "pdf"
+			},
+			{
+				"name": "Sveep Website",
+				"url": "Sveep_Website.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 18,
+		"name": "Velnerability Mapping",
+		"contentList": [{
+				"name": "Vulnerabilit Mapping Part 1",
+				"url": "Vulnerability_Mapping_Part_1.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Vulnerabilit Mapping Part 2",
+				"url": "Vulnerability_Mapping_Part_2.pptx",
+				"type": "pptx"
+			},
+			{
+				"name": "Rapid Fire on VM",
+				"url": "Rapid_Vm.pptx",
+				"type": "pptx"
+			}
+		]
+	}
+]

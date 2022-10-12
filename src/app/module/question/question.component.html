@@ -1,0 +1,85 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row">
+            <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+                <div><i class="material-icons">home</i></div>
+                <div class="menu-text-align">Home</div>
+            </div>
+            <div fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('user')">
+                <div><i class="material-icons">group</i></div>
+                <div class="menu-text-align">Add User</div>
+            </div>
+            <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('question')">
+                <div><i class="material-icons">menu_book</i></div>
+                <div class="menu-text-align">Add Question</div>
+            </div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('report')">
+                <div><i class="material-icons">auto_graph</i></div>
+                <div class="menu-text-align">Reports</div>
+            </div>
+            <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+                <div fxLayout="row" class="username-display">{{displayName}}</div>
+                <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                    <div><i class="material-icons">logout</i></div>
+                    <div class="menu-text-align-logout">Logout</div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="content">
+        <form #usersForm="ngForm">
+            <div fxLayout="column">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <!-- <div fxFlex="25" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="25" fxFlex.xl="25">
+                        <mat-form-field class="request-field" appearance="outline">
+                            <mat-label>Job Role</mat-label>
+                            <mat-select [(ngModel)]="jobRole" id="jobRole" name="jobRole" required>
+                                <mat-option value="ALMT">ALMT</mat-option>
+                                <mat-option value="RO">RO</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div> -->
+                    <div fxFlex="25" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="25" fxFlex.xl="25">
+                        <mat-form-field class="request-field" appearance="outline">
+                            <mat-label>Select a Category</mat-label>
+                            <mat-select [(ngModel)]="category" id="category" name="category" required>
+                                <mat-option *ngFor="let item of categoryList" [value]="item.name">{{item.name}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div fxFlex="25" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="25" fxFlex.xl="25">
+                        <input id="file" name="file" placeholder="" autocomplete="off" type="file" required>
+                    </div>    
+                </div>
+                <div fxLayout fxLayoutAlign="center center" style="margin-top: 30px;" fxLayoutGap="20px">
+                    <button [disabled]="usersForm.invalid" mat-raised-button color="primary"  (click)="upload()">Upload Questions</button>
+                    <button [disabled]="usersForm.invalid" mat-raised-button color="primary" (click)="downloadQuestions()">Download Question(s)</button>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <div fxFlex="25" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="25" fxFlex.xl="25">
+                        <p style="text-align: center;">Only excel files are supported.</p>
+                    </div>    
+                </div>
+            </div>
+        </form>
+
+    </div>       
+</div>

@@ -1,0 +1,76 @@
+<div layout="column" class="login-wrapper">
+  <div class="header">
+    <div fxLayout="row">
+        <div fxFlex="6">
+            <img src="assets/logo-small.png" width="70" height="70">
+        </div>
+        <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+        <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+        <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+        <div fxFlex class="image-social">
+            <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+            <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+            <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+            <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+        </div>
+    </div>    
+</div>
+  <div class="menu-bar">
+      <div fxLayout="row">
+          <div fxLayout="row" fxFlex="8" class="menu-item-wrapper active-selected-menu" (click)="routeGoTo('home')">
+              <div><i class="material-icons">home</i></div>
+              <div class="menu-text-align">Home</div>
+          </div>
+      </div>    
+  </div>
+  <div class="content">
+      <div fxLayout="row wrap" fxFlex.xs="100" fxFlex.sm="100">
+          <div fxFlex fxLayoutAlign="center center">
+            <div class="log-wrap">
+              <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+                <mat-form-field class="login-full-width" appearance="outline">
+                  <mat-label>Username</mat-label>
+                  <input matInput [formControl]="username" name="name" [(ngModel)]="loginData.username">
+                  <mat-error *ngIf="username.invalid">This is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="login-full-width" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput [formControl]="password" type="password" name="password" [(ngModel)]="loginData.password">
+                  <mat-error *ngIf="password.invalid">This is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="login-full-width" appearance="outline">
+                  <mat-label>Job Role</mat-label>
+                  <!-- <mat-select matInput [formControl]="jobRole" type="jobRole" name="jobRole" [(ngModel)]="loginData.jobRole">
+                    <mat-option value="ALMT">ALMT</mat-option>
+                    <mat-option value="RO">RO</mat-option>
+                    <mat-option value="ADMIN">ADMIN</mat-option>
+                  </mat-select> -->
+                <mat-select matInput [formControl]="jobRole" type="jobRole" name="jobRole" [(ngModel)]="loginData.jobRole" required>
+                  <mat-option *ngFor="let item of roleList" [value]="item.name">{{item.name}}</mat-option>
+                  <mat-option value="CEO">CEO</mat-option>
+                  <mat-option value="ADDL_CEO">ADDL_CEO</mat-option>
+                  <mat-option value="JOINT_CEO">JOINT_CEO</mat-option>
+                  <mat-option value="DEPUTY_CEO">DEPUTY_CEO</mat-option>
+                  <mat-option value="ASST_CEO">ASST_CEO</mat-option>
+                  <mat-option value="ADMINEO">ADMINEO</mat-option>
+                  <mat-option value="ADMIN">ADMIN</mat-option>
+                </mat-select>
+                  <mat-error *ngIf="jobRole.invalid">This is required</mat-error>
+                </mat-form-field>
+                <div style="margin-left: 48%;" *ngIf="progressBar">
+                  <mat-spinner diameter="20" class="spinner-eci"></mat-spinner>
+                </div>
+                <div class="password-mismatch" *ngIf="credential">You are not authorised to access this application. Please enter correct credentials to access !</div>
+                <div fxLayoutAlign="center center" style="margin-top: 30px;">
+                  <button mat-raised-button color="primary" type="submit" [disabled]="!authForm.valid">Login</button>
+                </div>
+              </form>
+            </div>        
+          </div>
+      </div>
+  </div>
+  <div class="footer">
+      <div class="copyright">© Copyright 2022 All Rights Reserved</div>
+      <div class="credits">Office of the Chief Electoral Officer, Tripura All rights reserved. Content Managed by Office of the Chief Electoral Officer, Tripura</div>
+  </div>
+</div>

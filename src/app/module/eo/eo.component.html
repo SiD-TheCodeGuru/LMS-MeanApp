@@ -1,0 +1,89 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row">
+            <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+                <div><i class="material-icons">home</i></div>
+                <div class="menu-text-align">Home</div>
+            </div>
+            <div fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('dashboard')">
+                <div><i class="material-icons">grid_4x4</i></div>
+                <div class="menu-text-align">Dashboard</div>
+            </div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('report')">
+                <div><i class="material-icons">auto_graph</i></div>
+                <div class="menu-text-align">Reports</div>
+            </div>
+            <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+                <div fxLayout="row" class="username-display">{{eoData.name}}</div>
+                <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                    <div><i class="material-icons">logout</i></div>
+                    <div class="menu-text-align-logout">Logout</div>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="content">
+        <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="100" fxFlex.xl="100">
+            <div fxLayout="column">
+                <div fxLayout="row wrap">
+                    <div fxFlex="60" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="60" fxFlex.xl="60">
+                        <div class="training-head-sub">Important Gudelines</div>
+                        <ul style="margin: 10px 0 0 0; font-size: 16px;">
+                            <li>Create users ONLY when REQUIRED.</li>
+                            <li>DO NOT create users AGAIN for the same person.</li>
+                            <li>Once user is created, you can not MODIFY/DELETE the users.</li>
+                            <li>After creation of the users, a excel file containing USERNAME and PASSWORD will be automatically downloaded in your system.</li>
+                            <li>Need help, please contact ADMINISTER.</li>
+                        </ul>
+                    </div>
+                    <div fxFlex class="message-box">
+                        <div class="training-head-sub">User Creation</div>
+                        <div style="margin: 30px 0 10px 10px; font-weight: 500;">Please select the category against which you want to create user(s)</div>
+                        <form style="margin: 0 10px 0 10px;" #usersForm="ngForm" (ngSubmit)="onCreateUsers()">
+                            <div fxLayout="column">
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="100" fxFlex.xl="100">
+                                        <mat-form-field class="request-field" appearance="outline">
+                                            <mat-label>Job Role</mat-label>
+                                            <mat-select [(ngModel)]="jobRole" id="jobRole" name="jobRole" required>
+                                                <mat-option *ngFor="let item of roleList" [value]="item">{{item.name}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div style="margin: 0px 0 10px 10px; font-weight: 500;">Please enter how many user(s) you want to create</div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="100" fxFlex.xl="100">
+                                        <mat-form-field class="request-field" appearance="outline">
+                                            <mat-label>Number of Users</mat-label>
+                                            <input matInput [(ngModel)]="numberOfUsers" id="numberOfUsers" name="numberOfUsers" type="number" placeholder="Number" autocomplete="off" required>
+                                        </mat-form-field>
+                                    </div>    
+                                </div>
+                            </div>
+                            <div fxLayout fxLayoutAlign="center center" style="margin-top: 30px;">
+                                <button mat-raised-button color="primary" type="submit" [disabled]="usersForm.invalid">Create User(s)</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>       
+</div>  

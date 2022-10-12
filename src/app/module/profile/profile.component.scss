@@ -1,0 +1,72 @@
+:host ::ng-deep {
+    .login-wrapper {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+    }
+    .header {
+        padding: 5px 0 0 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0px 0px 2px 0 rgb(193 202 212 / 70%);
+        border-bottom: solid 40px #3289c3;
+        height: 125px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .social-img {
+        margin: 10px 0 0 0;
+    }
+    .social-img:hover {
+        cursor: pointer;
+        border: solid 2px #c1cad4;
+        border-radius: 3px;
+    }
+    .header-text {
+        font-size: 26px;
+        font-weight: bold;
+        margin: 18px 0 0 0;
+    }
+    .footer {
+        text-align: center;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 3px;
+        height: 20px;
+        font-size: 12px; 
+        border-top: solid 1px #c1cad4;
+    }
+    .request-field {
+        width: 100%;
+        font-size: 12px;
+        height: 60px;
+    }
+    .request-field-two {
+        width: 100%;
+        font-size: 12px;
+        height: 60px;
+    }
+    .content {
+        padding: 10px 20px 10px 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 97%;
+        border: solid 1px #c1cad4;
+        border-radius: 3px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .content-header {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 20px 0;
+    }
+    .header-text {
+        font-size: 26px;
+        font-weight: bold;
+        margin: 18px 0 0 0;
+    }
+}    

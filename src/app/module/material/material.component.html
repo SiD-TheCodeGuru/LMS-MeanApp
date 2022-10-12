@@ -1,0 +1,80 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+            <div><i class="material-icons">home</i></div>
+            <div class="menu-text-align">Home</div>
+        </div>
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('about')">
+            <div><i class="material-icons">payment</i></div>
+            <div class="menu-text-align">About</div>
+        </div>
+        <div fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('registration')">
+            <div><i class="material-icons">notes</i></div>
+            <div class="menu-text-align">Registration</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper active-selected-menu" (click)="routeGoTo('material')">
+            <div><i class="material-icons">menu_book</i></div>
+            <div class="menu-text-align">Learning Material</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('test')">
+            <div><i class="material-icons">school</i></div>
+            <div class="menu-text-align">Take a Test</div>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+            <div fxLayout="row" class="username-display">{{userinfo.name ? userinfo.name : ''}}</div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                <div><i class="material-icons">logout</i></div>
+                <div class="menu-text-align-logout">Logout</div>
+            </div>
+        </div>    
+    </div>
+    <div class="content">
+        <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="100" fxFlex.xl="100">
+                <div fxLayout="column" class="action-section">
+                    <!-- <div class="training-head">Training Materials</div> -->
+                    <div fxLayout="row wrap">
+                        <div fxFlex="33.3" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="33.3" fxFlex.xl="33.3" class="message-box">
+                            <div class="training-head-sub">Training Categories</div>
+                            <div *ngFor="let item of materialList;">
+                                <div fxLayout="row wrap" class="training-list" [ngClass]="{'list-active': item.id === selectedId}" (click)="getList(item)" *ngIf="materialList.length > 0">
+                                    <div><i class="material-icons" style="color: #3289c3;">folder</i></div>
+                                    <div style="margin: 2px 0 0 5px;">{{item.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div fxFlex class="message-box">
+                            <div class="training-head-sub">Training Materials</div>
+                            <div *ngFor="let item of materialList[selectedId-1].contentList">
+                                <div fxLayout="row" class="content-list" (click)="onDownload(item.url)">
+                                    <div><img src="assets/logo-small.png" width="30" height="30"></div>
+                                    <div style="margin: 2px 0 0 5px;">{{item.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="copyright">© Copyright 2022 All Rights Reserved</div>
+        <div class="credits">Office of the Chief Electoral Officer, Tripura All rights reserved. Content Managed by Office of the Chief Electoral Officer, Tripura</div>
+    </div>
+  </div>

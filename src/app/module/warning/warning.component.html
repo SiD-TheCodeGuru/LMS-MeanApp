@@ -1,0 +1,10 @@
+<div fxLayout="column">
+    <div class="header">{{dataInfo.subject}}</div>
+    <div class="message">{{dataInfo.message}}</div>
+    <div style="text-align: center; padding-bottom: 10px;">
+        <button *ngIf="dataInfo.type !== 'exam' && dataInfo.type !== 'pendingexam'" mat-raised-button style="background-color: #3289c3; color: white;" (click)="close('done')">Done</button>
+        <button *ngIf="dataInfo.type == 'pendingexam'" mat-raised-button style="background-color: #3289c3; color: white;" (click)="close('ok')">Ok</button>
+        <button *ngIf="dataInfo.type === 'exam'" mat-raised-button style="background-color: #3289c3; color: white; margin-right: 20px;" (click)="close('submit')">Submit</button>
+        <button *ngIf="dataInfo.type === 'exam'" mat-raised-button style="background-color: #3289c3; color: white;" (click)="close('cancel')">Cancel</button>
+    </div>
+</div>    

@@ -1,0 +1,156 @@
+.login-wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+}
+.header {
+    padding: 5px 0 0 20px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 2px 0 rgb(193 202 212 / 70%);
+    border-bottom: solid 40px #3289c3;
+    height: 125px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-text {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 18px 0 0 0;
+}
+.message-box {
+    text-align: center;
+    height: auto;
+    margin: 10px;
+    border: solid 1px #c1cad4;
+    border-radius: 3px;
+    padding-top: 10px;   
+    box-shadow: 0 0 3px 0 rgba(193, 202, 212, 0.7);
+}
+.video-box {
+    margin: 10px;
+    border: solid 1px #c1cad4;
+    border-radius: 3px;   
+    padding: 10px;
+    box-shadow: 0 0 3px 0 rgba(193, 202, 212, 0.7);
+}
+.action-section {
+    margin-top: 10px;
+    border: solid 1px #c1cad4;
+    border-radius: 3px;   
+    padding: 10px;
+    box-shadow: 0 0 3px 0 rgba(193, 202, 212, 0.7);
+}
+.training-head {
+    font-size: 20px;
+    font-weight: 500;
+    background-color: darkgray;
+    padding: 5px 5px 5px 10px;
+    border-radius: 2px;
+}
+.material-listho {
+    cursor: pointer;
+}
+.material-listho:hover {
+    font-weight: 500;
+}
+.card-big {
+    cursor: pointer;
+}
+.card-big:hover {
+    color: silver;
+}
+.footer {
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    background: #404040;
+    font-weight: 400;
+    padding: 15px 0 0px 0;
+    color: #fff;
+    font-size: 14px;
+}
+.request-field {
+    width: 100%;
+    font-size: 12px;
+    height: 60px;
+}
+.content {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.div-separator {
+    padding: 20px; 
+    border-radius: 3px; 
+    box-shadow: 0 0 3px 0 rgba(193, 202, 212, 0.7); 
+    border-bottom: solid 1px #c1cad4;
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+.div-separator-para {
+    padding: 20px; 
+    height: 200px;
+    border-radius: 3px; 
+    box-shadow: 0 0 3px 0 rgba(193, 202, 212, 0.7); 
+    border-bottom: solid 1px #c1cad4;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+::ng-deep .mat-list-base .mat-list-item .mat-list-item-content {
+    padding: 0px !important;
+}
+
+
+
+.tick text {
+    font-size: 12px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #4C5554;
+    stroke-width: 1;
+}
+
+.x.axis .tick line {
+    display: none
+}
+
+.domain {
+    display: block !important;
+    stroke: #4C5554 !important;
+    stroke-width: 2 !important;
+}
+.legend {
+    font-size: 12px;
+    font-family: sans-serif;
+    rect {
+        stroke-width: 2;
+    }
+}
+.mob-text-number {
+    font-size: 3rem; 
+    margin-top: -20px;
+}
+
+@media only screen and (max-device-width: 1179px) {
+    .chart-no-show {
+        display: none !important;
+    }
+    .text-no-show {
+        display: none !important;
+    }
+    .mob-text-number {
+        font-size: 2rem !important;
+    }
+    .label-mob {
+        font-size: 16px;
+    }
+ }

@@ -1,0 +1,102 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+            <div><i class="material-icons">home</i></div>
+            <div class="menu-text-align">Home</div>
+        </div>
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('about')">
+            <div><i class="material-icons">payment</i></div>
+            <div class="menu-text-align">About</div>
+        </div>
+        <div fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('registration')">
+            <div><i class="material-icons">notes</i></div>
+            <div class="menu-text-align">Registration</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('material')">
+            <div><i class="material-icons">menu_book</i></div>
+            <div class="menu-text-align">Learning Material</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper active-selected-menu" (click)="routeGoTo('test')">
+            <div><i class="material-icons">school</i></div>
+            <div class="menu-text-align">Take a Test</div>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+            <div fxLayout="row" class="username-display">{{userinfo.name ? userinfo.name : ''}}</div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                <div><i class="material-icons">logout</i></div>
+                <div class="menu-text-align-logout">Logout</div>
+            </div>
+        </div>    
+    </div>
+    <div class="content">
+        <!-- <div class="content-header">Profile Information</div>
+        <form #authForm="ngForm" (ngSubmit)="onSaveNote(authForm)">
+            <div style="margin-top: 30px;">
+                <button mat-raised-button color="primary" type="submit">Save Profile</button>
+            </div>
+        </form> -->
+        <div fxLayout="row wrap">
+            <div fxFlex="100" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="100" fxFlex.xl="100">
+                <div fxLayout="column">
+                    <!-- <div class="training-head">Training Materials</div> -->
+                    <div fxLayout="row wrap">
+                        <div fxFlex="60" fxFlex.xs="100" fxFlex.sm="100" fxFlex.lg="60" fxFlex.xl="60">
+                            <div class="training-head-sub">Important Gudelines</div>
+                            <ul style="margin: 10px 0 0 0;">
+                                <li>The test will comprise of Objective type Multiple Choice Questions (MCQs)</li>
+                                <li>All questions are compulsory with equal weightage of marks for each question.</li>
+                                <li>There will be NO NEGATIVE MARKING for the wrong answers.</li>
+                                <li>The test does not require using any paper, pen, pencil and calculator.</li>
+                                <li>Every user will take the test on a Laptop/Desktop/Smart Phone.</li>
+                                <li>On computer screen every candidate will be given objective type Multiple Choice Questions (MCQs).</li>
+                                <li>Each user will get questions and answers in different order selected randomly from a fixed Question Databank.</li>
+                                <li>The users just need to click on the Right Choice / Correct option from the multiple choices /options given with each question. For Multiple Choice Questions, each question has four options, and the candidate has to click the appropriate option.</li>
+                                <li>The Time of the test begins only when the ‘Start Test’ button is pressed.</li>
+                                <li>The answers can be changed at any time during the test and are saved automatically.</li>
+                            </ul>
+                        </div>
+                        <div fxFlex class="message-box">
+                            <div class="training-head-sub">Test Categories</div>
+                            <div style="margin: 30px 0 10px 10px; font-weight: 500;">Please select the category in which you want to take the test</div>
+                            <form #authForm="ngForm" (ngSubmit)="startTest(authForm)">
+                                <div>
+                                    <mat-form-field class="request-field" appearance="outline">
+                                        <mat-label>Select a Category</mat-label>
+                                        <mat-select [(ngModel)]="category" id="category" name="category" required>
+                                            <mat-option value="All">All</mat-option>
+                                            <mat-option *ngFor="let item of categoryList" [value]="item.name">{{item.name}}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div fxLayoutAlign="center center" style="height: 30px; margin: 10px 0 0 0;">
+                                    <div style="font-weight: 500; color: brown;" *ngIf="examTaken">You have already appeared for this test. Please select a different test !</div>
+                                    <div style="font-weight: 500; color: brown;" *ngIf="noContent">Questions for this category is yet to be prepared !</div>
+                                    <mat-spinner diameter="20" *ngIf="progressBar" class="spinner-eci"></mat-spinner>
+                                  </div>
+                                <div fxLayoutAlign="center center" style="margin: 10px 10px 10px 10px;">
+                                    <button mat-raised-button style="width: 40%; padding: 5px 0 5px 0; font-size: 16px;" color="primary" type="submit" [disabled]="authForm.invalid">Start Test</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

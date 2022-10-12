@@ -1,0 +1,69 @@
+<div layout="column" class="login-wrapper">
+    <div class="header">
+        <div fxLayout="row">
+            <div fxFlex="6">
+                <img src="assets/logo-small.png" width="70" height="70">
+            </div>
+            <div fxFlex="25" class="logo-text image-social">Office of the Chief Electoral Officer<br>Government of Tripura</div>
+            <div fxFlex="53" class="header-text-mobile">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex="53" class="header-text">TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM</div>
+            <div fxFlex class="image-social">
+                <img class="social-img" (click)="goto('facebook')" src="assets/facebook.png" width="50" height="50">
+                <img class="social-img" (click)="goto('youtube')" src="assets/youtube.png" width="44" height="44">
+                <img class="social-img" (click)="goto('twitter')" src="assets/twitter.png" width="50" height="50">
+                <img class="social-img" (click)="goto('instagram')" src="assets/instagram.png" width="42" height="42">
+            </div>
+        </div>    
+    </div>
+    <div class="menu-bar">
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('home')">
+            <div><i class="material-icons">home</i></div>
+            <div class="menu-text-align">Home</div>
+        </div>
+        <div fxLayout="row" fxFlex="8" class="menu-item-wrapper" (click)="routeGoTo('about')">
+            <div><i class="material-icons">payment</i></div>
+            <div class="menu-text-align">About</div>
+        </div>
+        <div fxLayout="row" fxFlex="11" class="menu-item-wrapper" (click)="routeGoTo('registration')">
+            <div><i class="material-icons">notes</i></div>
+            <div class="menu-text-align">Registration</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper" (click)="routeGoTo('material')">
+            <div><i class="material-icons">menu_book</i></div>
+            <div class="menu-text-align">Learning Material</div>
+        </div>
+        <div fxLayout="row" fxFlex="14" class="menu-item-wrapper active-selected-menu" (click)="routeGoTo('test')">
+            <div><i class="material-icons">school</i></div>
+            <div class="menu-text-align">Take a Test</div>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="logout-right">
+            <div fxLayout="row" class="username-display">{{userinfo.name ? userinfo.name : ''}}</div>
+            <div fxLayout="row" class="menu-item-wrapper" (click)="routeGoTo('logout')">
+                <div><i class="material-icons">logout</i></div>
+                <div class="menu-text-align-logout">Logout</div>
+            </div>
+        </div>    
+    </div>
+    <div class="content">
+        <div>
+            <div style="font-size: 22px; margin: 30px 0 15px 0; text-align: center;">Thank you Shri/Ms. <span style="text-transform: capitalize; font-weight: 500;">{{userinfo.name}} {{userinfo.emer_contact_no}} {{userinfo.emp_id}}</span> for taking the test. Your result is <span style="font-weight: 500;">{{ (resultValue === 'passed') ? 'Satisfactory' : 'Need to Improve' }} !</span></div>
+            <div *ngIf="resultValue !== 'passed'" style="font-size: 22px; margin: 50px 0 250px 0; text-align: center;">Please go through all the required learning materials. <br> <span style="color: #0275d8; cursor: pointer;" class="click-here" (click)="routeGoTo('material')">Click Here</span> to go to Learning Material.</div>
+            <div style="text-align: center;" *ngIf="resultValue === 'passed'">
+                <button style="margin: 20px 0 10px 0;" mat-raised-button color="primary" (click)="downloadCertificate()"><span class="material-icons">download</span> Click Here To Download Your Certificate</button>
+            </div>
+        </div>
+        <div id="certificate" fxLayout="row" fxLayoutAlign="center center" *ngIf="resultValue === 'passed'">
+            <div class="cer-border" style="padding: 30px; flex: 1 1 100%; max-width: 60%;" fxFlex="60" fxFlex.sm="100" fxFlex.xs="100">
+                <div style="text-align: center;"><img src="assets/logo-small.png" width="100" height="100"></div>
+                <div style="text-align: center; font-weight: 500; text-decoration: underline; font-size: 20px; margin: 10px 0 30px 0;">Certificate</div>
+                <div style="font-style: italic; font-size: 16px;">This is to certify that Shri/Ms. {{userinfo.name}} {{userinfo.emer_contact_no}} {{userinfo.emp_id}} and {{userinfo.designation}} of {{userinfo.department}} department, entrusted with the role of {{userinfo.job_role}} of {{userinfo.working_district}} in the Tripura Assembly Election 2022, has completed the mandatory training conducted by the office of the Chief Electoral Officer, Tripura.</div>
+                <br/>
+                <div style="font-style: italic; font-size: 16px;">His/Her performance in the training has been assessed online and found to be satisfactory based on the evaluation conducted online through TRIPURA ELECTION TRAINING AND LEARNING MANAGEMENT SYSTEM (TETLMS) portal on {{dateValue}}.</div>
+                <div style="text-align: right; margin-top: 20px;"><img src="assets/bar-code.png" width="120" height="120"></div>
+                <div>Sl. No.: {{userinfo.id}}  &  Date: {{dateValue}}</div>
+                <div style="font-size: 12px;">N.B: This is an electronically generated certificate and does not require any signature.</div>
+            </div>
+        </div>
+        <div style="margin-top: 50px;"></div>
+    </div>
+</div>
